@@ -1,0 +1,133 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+body {
+    color: #1d1d1d;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+    min-height: 100%;
+    text-align: center;
+}
+.game {
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+@keyframes animatebg{
+    0%,100% {
+    transform:scale(1);
+    }
+    50%{
+    transform:scale(1.2);
+    }
+}
+span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 0 1px white;
+    animation: animate 5s linear infinite;
+}
+span::before{
+    content:'';
+    position:absolute;
+    top:50%;
+    width:400px;
+    height:1px;
+    background:linear-gradient(90deg,#fff,transparent);
+    
+}
+@keyframes animate{
+    0%{transform:rotate(315deg) translate(0)}
+    100%{
+    transform:rotate(315deg) translate(-1000px);
+    }
+}
+span:nth-child(1){
+    top:0;
+    right:0;
+    left:initial;
+}
+span:nth-child(2){
+    top:0;
+    right:700px;
+}
+span:nth-child(3){
+    top:100px;
+    right:80px;
+
+}
+.game__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+}
+.game__title {
+    font-family: 'Literata', Arial, Helvetica, serif;
+    color: #f9f9f9;
+    font-size: 58px;
+    padding-top: 50px;
+}
+.widget {
+    width: 700px;
+    height: 350px;
+    background-color: #f9f9f9;
+    border: 5px solid #1d1d1d;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.text {
+    font-family: 'Philosopher', Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transform: translateY(1em);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1em);
+    }
+    to {
+        opacity: 1;
+        max-height: 350px;
+    }
+}
+
+.text {
+    animation: fadeIn 0.8s ease forwards;
+}
+.btn {
+    background-color: #1d1d1d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #3e3e3e;
+}
+svg {
+    width: 20px;
+}
